@@ -1,7 +1,7 @@
-@use '@/tokens/border.scss';
-@use '@/tokens/function.scss';
-@use '@/tokens/layout.scss';
-@use '@/tokens/scheme.scss';
-@use '@/tokens/shadow.scss';
-@use '@/tokens/theme.scss';
-@use '@/tokens/typography.scss';
+@use 'border' as *;
+@use 'function' as *;
+@use 'layout' as *;
+@use 'scheme' as *;
+@use 'shadow' as *;
+@use 'theme' as *;
+@use 'typography' as *;

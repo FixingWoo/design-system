@@ -11,4 +11,40 @@
   --line-height-heading-multiplier: 1;
   --line-height-body-multiplier: 1;
   --line-height-label-multiplier: 1;
+
+  /* FONT SCALING */
+  --font-scaling-desktop: 16px;
+  --font-scaling-tablet: 16px;
+  --font-scaling-mobile: 16px;
+
+  --cursor-interactive: pointer;
+
+  // TODO - 테마
+
+  /* neutral */
+  --neutral-background-strong: var(--function-neutral-800);
+  --neutral-background-medium: var(--function-neutral-1000);
+  --neutral-background-weak: var(--static-white);
+
+  --neutral-on-background-strong: var(--function-neutral-100);
+  --neutral-on-background-medium: var(--function-neutral-400);
+  --neutral-on-background-weak: var(--function-neutral-500);
+
+  --neutral-solid-strong: var(--function-neutral-600);
+  --neutral-solid-medium: var(--function-neutral-500);
+  --neutral-solid-weak: var(--function-neutral-400);
+
+  --neutral-on-solid-strong: var(--static-white);
+  --neutral-on-solid-weak: var(--function-neutral-1000);
+
+  --neutral-border-strong: var(--function-neutral-800);
+  --neutral-border-medium: var(--function-neutral-900);
+  --neutral-border-weak: var(--function-neutral-1000);
+
+  --neutral-alpha-strong: var(--function-neutral-600-50);
+  --neutral-alpha-medium: var(--function-neutral-600-30);
+  --neutral-alpha-weak: var(--function-neutral-600-10);
+
+  /* brand */
+  --brand-on-background-weak: var(--function-brand-500);
 }
