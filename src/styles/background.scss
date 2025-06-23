@@ -1,0 +1,124 @@
+/****************************/
+/*     BACKGROUND-COLOR     */
+/****************************/
+
+.surface-background {
+  background-color: var(--surface-background);
+  backdrop-filter: var(--backdrop-filter);
+}
+
+/* NEUTRAL */
+.neutral-background-weak,
+.neutral-background-medium,
+.neutral-background-strong,
+.neutral-background-alpha-weak,
+.neutral-background-alpha-medium,
+.neutral-background-alpha-strong {
+  ::selection {
+    background-color: var(--neutral-on-background-weak);
+    color: var(--neutral-background-weak);
+  }
+}
+
+.neutral-solid-weak,
+.neutral-solid-medium,
+.neutral-solid-strong {
+  ::selection {
+    background-color: var(--neutral-background-weak);
+    color: var(--neutral-on-background-medium);
+  }
+}
+
+.neutral-background-weak {
+  background-color: var(--neutral-background-weak);
+}
+
+.neutral-background-medium {
+  background-color: var(--neutral-background-medium);
+}
+
+.neutral-background-strong {
+  background-color: var(--neutral-background-strong);
+}
+
+.neutral-solid-weak {
+  background-color: var(--neutral-solid-weak);
+}
+
+.neutral-solid-medium {
+  background-color: var(--neutral-solid-medium);
+}
+
+.neutral-solid-strong {
+  background-color: var(--neutral-solid-strong);
+}
+
+.neutral-background-alpha-weak {
+  background-color: var(--neutral-alpha-weak);
+}
+
+.neutral-background-alpha-medium {
+  background-color: var(--neutral-alpha-medium);
+}
+
+.neutral-background-alpha-strong {
+  background-color: var(--neutral-alpha-strong);
+}
+
+/* BRAND */
+.brand-background-weak,
+.brand-background-medium,
+.brand-background-strong,
+.brand-background-alpha-weak,
+.brand-background-alpha-medium,
+.brand-background-alpha-strong {
+  ::selection {
+    background-color: var(--brand-on-background-weak);
+    color: var(--brand-background-weak);
+  }
+}
+
+.brand-solid-weak,
+.brand-solid-medium,
+.brand-solid-strong {
+  ::selection {
+    background-color: var(--brand-background-weak);
+    color: var(--brand-on-background-medium);
+  }
+}
+
+.brand-background-weak {
+  background-color: var(--brand-background-weak);
+}
+
+.brand-background-medium {
+  background-color: var(--brand-background-medium);
+}
+
+.brand-background-strong {
+  background-color: var(--brand-background-strong);
+}
+
+.brand-solid-weak {
+  background-color: var(--brand-solid-weak);
+}
+
+.brand-solid-medium {
+  background-color: var(--brand-solid-medium);
+}
+
+.brand-solid-strong {
+  background-color: var(--brand-solid-strong);
+}
+
+.brand-background-alpha-weak {
+  background-color: var(--brand-alpha-weak);
+}
+
+.brand-background-alpha-medium {
+  background-color: var(--brand-alpha-medium);
+}
+
+.brand-background-alpha-strong {
+  background-color: var(--brand-alpha-strong);
+}

@@ -19,7 +19,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={cn(font.primary.variable)}>{children}</body>
+      <body
+        data-neutral="gray"
+        data-brand="indigo"
+        className={cn(font.primary.variable)}
+      >
+        {children}
+      </body>
     </html>
   );
 }
