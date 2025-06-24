@@ -16,7 +16,6 @@ const meta: Meta<typeof Flex> = {
     fill: { table: { disable: true } },
     fillWidth: { table: { disable: true } },
     fillHeight: { table: { disable: true } },
-
     direction: {
       control: { type: 'select' },
       options: ['row', 'column', 'row-reverse', 'column-reverse'],
@@ -33,9 +32,6 @@ type Story = StoryObj<typeof Flex>;
 
 export const Default: Story = {
   args: {
-    direction: 'row',
-    padding: 'l',
-    shadow: 's',
     children: (
       <>
         <Flex padding="s" background="neutral-weak">
