@@ -73,7 +73,7 @@ interface SpacingProps {
   right?: SpacingToken;
   bottom?: SpacingToken;
   left?: SpacingToken;
-  gap?: SpacingToken;
+  gap?: SpacingToken | '-1';
 }
 
 interface SizeProps {

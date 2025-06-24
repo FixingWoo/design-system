@@ -144,7 +144,11 @@ const Flex = ({
     horizontal && `flex-${horizontal}`,
     vertical && `flex-${vertical}`,
     center && 'center',
-    gap && `gap-${gap}`,
+    gap === '-1'
+      ? direction === 'column' || direction === 'column-reverse'
+        ? 'g-vertical--1'
+        : 'g-horizontal--1'
+      : gap && `g-${gap}`,
     padding && `p-${padding}`,
     paddingLeft && `pl-${paddingLeft}`,
     paddingRight && `pr-${paddingRight}`,
