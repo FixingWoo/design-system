@@ -19,6 +19,13 @@
 
   --cursor-interactive: pointer;
 
+  --solid-inset-distance: 0;
+  --solid-inset-size: 0;
+  --solid-border-width: 0;
+  --backdrop-filter: none;
+  --surface-border: var(--static-transparent);
+  --surface-background: var(--neutral-background-medium);
+
   // TODO - 테마
 
   /* neutral */
@@ -61,4 +68,32 @@
   --brand-alpha-strong: var(--function-brand-600-50);
   --brand-alpha-medium: var(--function-brand-600-30);
   --brand-alpha-weak: var(--function-brand-600-10);
+
+  --brand-solid-strong: var(--function-brand-600);
+  --brand-solid-medium: var(--function-brand-500);
+  --brand-solid-weak: var(--function-brand-400);
+
+  --brand-on-solid-strong: var(--static-white);
+  --brand-on-solid-weak: var(--function-brand-1000);
+
+  /* solid */
+  --solid-inset-color-neutral: var(--static-transparent);
+  --solid-inset-color-brand: var(--static-transparent);
+
+  --solid-border-color-brand: var(--brand-alpha-strong);
+  --solid-border-color-neutral: var(--neutral-alpha-strong);
+  --solid-border-color-danger: var(--danger-alpha-strong);
+
+  /* transition */
+  --transition-eased: ease-in-out;
+  --transition-property-all: all;
+  --transition-duration-micro-short: 0.1s;
+  --transition-duration-micro-medium: 0.2s;
+  --transition-duration-micro-long: 0.4s;
+  --transition-micro-short: var(--transition-property-all)
+    var(--transition-duration-micro-short) var(--transition-eased);
+  --transition-micro-medium: var(--transition-property-all)
+    var(--transition-duration-micro-medium) var(--transition-eased);
+  --transition-micro-long: var(--transition-property-all)
+    var(--transition-duration-micro-long) var(--transition-eased);
 }
