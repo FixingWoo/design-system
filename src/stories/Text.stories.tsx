@@ -46,7 +46,6 @@ type Story = StoryObj<typeof Text>;
 export const Default: Story = {
   args: {
     variant: undefined,
-    weight: 'default',
     onBackground: 'neutral-weak',
     children: 'Text Component',
   },
