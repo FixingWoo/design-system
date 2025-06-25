@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/nextjs';
-import { Heading } from '../components/Heading';
+import { Heading } from '../components';
 
 import '@/tokens/index.scss';
 import '@/styles/index.scss';

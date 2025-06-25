@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react';
 import Link from 'next/link';
 
-import { Flex } from './Flex';
+import { Flex } from './';
 
 interface ElementTypeProps {
   href?: string;

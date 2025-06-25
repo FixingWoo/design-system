@@ -1,6 +1,6 @@
 'use client';
 
-import { Flex } from './Flex';
+import { Flex } from './';
 
 interface ColumnProps extends React.ComponentProps<typeof Flex> {
   children?: React.ReactNode;

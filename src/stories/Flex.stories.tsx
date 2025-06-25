@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/nextjs';
-import { Flex } from '../components/Flex';
+import { Flex } from '../components';
 
 import '@/tokens/index.scss';
 import '@/styles/index.scss';
