@@ -1,0 +1,23 @@
+.option {
+  border-color: var(--static-transparent);
+
+  &:hover,
+  &:focus {
+    background: var(--neutral-alpha-weak);
+    border-color: var(--neutral-alpha-medium);
+  }
+
+  &.selected {
+    background: var(--neutral-alpha-medium);
+    border-color: var(--neutral-alpha-medium);
+  }
+
+  &.highlighted {
+    background: var(--static-transparent);
+    border-color: var(--neutral-alpha-medium);
+  }
+}
+
+.focused {
+  background: var(--neutral-background-strong);
+}
