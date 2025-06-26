@@ -18,6 +18,7 @@ interface ComponentProps
 
 const Flex = ({
   as: Component = 'div',
+  transition,
   onBackground,
   background,
   solid,

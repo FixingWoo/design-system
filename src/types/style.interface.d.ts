@@ -20,6 +20,13 @@ interface DisplayProps {
   overflowX?: CSSProperties['overflowX'];
   overflowY?: CSSProperties['overflowY'];
   zIndex?: 0 | 1 | 10;
+  transition?:
+    | 'micro-short'
+    | 'micro-medium'
+    | 'micro-long'
+    | 'macro-short'
+    | 'macro-medium'
+    | 'macro-long';
 }
 
 interface FlexProps {
