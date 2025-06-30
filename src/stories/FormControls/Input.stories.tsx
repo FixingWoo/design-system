@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 
-import { Button, Input, Flex, Text } from '../components';
+import { Button, Input, Flex, Text } from '../../components';
 
 import '@/tokens/index.scss';
 import '@/styles/index.scss';
@@ -18,7 +18,7 @@ const formSchema = z.object({
 type FormData = z.infer<typeof formSchema>;
 
 const meta: Meta<typeof Input> = {
-  title: 'Components/Input',
+  title: 'Components/FormControls/Input',
   component: Input,
   tags: ['autodocs'],
 };
