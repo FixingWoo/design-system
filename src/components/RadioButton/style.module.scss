@@ -1,0 +1,36 @@
+.label {
+  &:has(.input:disabled) {
+    cursor: not-allowed;
+    color: var(--neutral-on-background-weak);
+  }
+}
+
+.input {
+  cursor: pointer;
+  margin: 0;
+  width: var(--static-space-20);
+  height: var(--static-space-20);
+  min-width: var(--static-space-20);
+  min-height: var(--static-space-20);
+
+  border: 1px solid var(--solid-border-color-neutral);
+  border-radius: 50%;
+
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  &:checked {
+    border-width: 5px;
+    border-color: var(--brand-on-background-medium);
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+
+    &:checked {
+      border-width: 5px;
+      border-color: var(--solid-border-color-neutral);
+    }
+  }
+}

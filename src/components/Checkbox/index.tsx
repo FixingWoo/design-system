@@ -1,7 +1,6 @@
 'use client';
 
 import React, { forwardRef, useState, useEffect } from 'react';
-import cn from 'classnames';
 
 import { Flex, Button, Icon } from '@/components';
 
