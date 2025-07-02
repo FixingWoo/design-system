@@ -28,6 +28,20 @@
 
   // TODO - 테마
 
+  /**
+  * scheme에서 정의한 컬러를 “의미 단위”로 매핑
+  * strong, medium, weak, alpha 등으로 구분
+  * background, on-background, border 등 UI 역할별로 변수 선언
+
+  * 의미 
+  * background - 배경색
+  * on-background - 폰트 혹은 이미지
+  * solid - 테두리 색
+  * on-solid - 테두리 색 위에 폰트 혹은 이미지
+  * border - 테두리 색
+  * alpha - 테두리 색 위에 폰트 혹은 이미지
+ */
+
   /* neutral */
   --neutral-background-strong: var(--function-neutral-800);
   --neutral-background-medium: var(--function-neutral-1000);
