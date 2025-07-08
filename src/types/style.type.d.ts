@@ -16,7 +16,8 @@ type StaticSpacingToken =
   | '80'
   | '104'
   | '128'
-  | '160';
+  | '160'
+  | '250';
 
 type TShirtSizes = 'xs' | 's' | 'm' | 'l' | 'xl';
 

@@ -1,0 +1,70 @@
+.select {
+  @mixin Icon {
+    background-image: url('data:image/svg+xml;utf8,<svg width="12" height="12" viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M27 66L120.752 165L213 66" stroke="%23333333" stroke-width="40"/></svg>');
+  }
+  @mixin ActiveIcon {
+    background-image: url('data:image/svg+xml;utf8,<svg width="12" height="12" viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M27 66L120.752 165L213 66" stroke="%235f2cdf" stroke-width="40"/></svg>');
+  }
+  @mixin DisabeldIcon {
+    background-image: url('data:image/svg+xml;utf8,<svg width="12" height="12" viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M27 66L120.752 165L213 66" stroke="%23c1c1c1" stroke-width="40"/></svg>');
+  }
+  @mixin OpenIcon {
+    background-image: url('data:image/svg+xml;utf8,<svg width="12" height="12" viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M27 174L120.752 75L213 174" stroke="%235f2cdf" stroke-width="40"/></svg>');
+  }
+
+  @include Icon;
+
+  background-repeat: no-repeat;
+  background-position-x: calc(100% - 12px);
+  background-position-y: calc(50%);
+
+  &:not(.disabled) {
+    &:hover,
+    &:focus {
+      @include ActiveIcon;
+      border-color: var(--brand-on-background-weak);
+    }
+
+    &.error {
+      border-color: var(--danger-on-background-weak);
+    }
+
+    &.open {
+      @include OpenIcon;
+      border-color: var(--brand-on-background-weak);
+    }
+  }
+
+  &.disabled {
+    @include DisabeldIcon;
+    color: var(--neutral-on-background-weak);
+    border-color: var(--solid-border-color-neutral);
+    background-color: var(--neutral-alpha-weak);
+    cursor: not-allowed;
+  }
+
+  .options {
+    border-color: var(--brand-on-background-weak);
+
+    .list {
+      list-style: none;
+      padding: 0;
+
+      .item {
+        &:hover {
+          background-color: var(--brand-alpha-weak);
+        }
+
+        &:last-child {
+          margin: 0;
+        }
+      }
+    }
+
+    .label {
+      &.active {
+        color: var(--brand-on-background-weak);
+      }
+    }
+  }
+}

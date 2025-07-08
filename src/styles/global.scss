@@ -1,6 +1,8 @@
 * {
   box-sizing: border-box;
   scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: var(--neutral-alpha-medium) transparent;
 }
 
 h1,
@@ -53,9 +55,4 @@ img {
 ::selection {
   background: var(--neutral-on-background-medium);
   color: var(--neutral-background-strong);
-}
-
-::-webkit-scrollbar {
-  width: var(--static-space-8);
-  height: var(--static-space-8);
 }

@@ -8,15 +8,6 @@ import { Button, Input, Flex, Text } from '../../components';
 import '@/tokens/index.scss';
 import '@/styles/index.scss';
 
-// Zod 스키마 정의
-const formSchema = z.object({
-  email: z.string().email('올바른 이메일을 입력해주세요'),
-  password: z.string().min(8, '비밀번호는 최소 8자 이상이어야 합니다'),
-  name: z.string().min(2, '이름은 최소 2자 이상이어야 합니다'),
-});
-
-type FormData = z.infer<typeof formSchema>;
-
 const meta: Meta<typeof Input> = {
   title: 'Components/FormControls/Input',
   component: Input,
@@ -40,6 +31,15 @@ export const Default: Story = {
 };
 
 // React Hook Form과 Zod를 사용한 폼 스토리
+
+// Zod 스키마 정의
+const formSchema = z.object({
+  email: z.string().email('올바른 이메일을 입력해주세요'),
+  password: z.string().min(8, '비밀번호는 최소 8자 이상이어야 합니다'),
+  name: z.string().min(2, '이름은 최소 2자 이상이어야 합니다'),
+});
+
+type FormData = z.infer<typeof formSchema>;
 const FormExample = () => {
   const {
     register,

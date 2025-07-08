@@ -17,6 +17,7 @@ export const SIZES = [
   '104',
   '128',
   '160',
+  '250',
 ];
 
 export const T_SHIRT_SIZES = ['xs', 's', 'm', 'l', 'xl'];
