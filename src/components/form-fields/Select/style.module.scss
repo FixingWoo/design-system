@@ -42,29 +42,32 @@
     background-color: var(--neutral-alpha-weak);
     cursor: not-allowed;
   }
+}
 
-  .options {
-    border-color: var(--brand-on-background-weak);
+.options {
+  border-color: var(--brand-on-background-weak);
 
-    .list {
-      list-style: none;
-      padding: 0;
+  .list {
+    padding: 0;
 
-      .item {
-        &:hover {
-          background-color: var(--brand-alpha-weak);
-        }
+    .item {
+      border-radius: var(--radius-xxs);
+      padding: var(--static-space-8);
+      margin: 0;
 
-        &:last-child {
-          margin: 0;
-        }
+      &:hover {
+        background-color: var(--brand-alpha-weak);
+      }
+
+      &:last-child {
+        margin: 0;
       }
     }
+  }
 
-    .label {
-      &.active {
-        color: var(--brand-on-background-weak);
-      }
+  .label {
+    &.active {
+      color: var(--brand-on-background-weak);
     }
   }
 }

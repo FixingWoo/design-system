@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useRef, useState, ReactNode, useEffect, useMemo } from 'react';
+import { createPortal } from 'react-dom';
 import cn from 'classnames';
 import styles from './style.module.scss';
 
@@ -86,7 +87,13 @@ const Select = ({
       containerRef.current &&
       !containerRef.current.contains(event.target)
     ) {
-      setIsOpen(false);
+      const target = event.target as HTMLElement;
+      const isOptionClick =
+        target.closest('li') || target.closest(`.${styles.options}`);
+
+      if (!isOptionClick) {
+        setIsOpen(false);
+      }
     }
   };
 
@@ -150,36 +157,29 @@ const Select = ({
       >
         <Text variant="body-default-m">{selectedLabel}</Text>
 
-        {isOpen && (
-          <Flex
-            className={styles.options}
-            direction="column"
-            position="absolute"
-            top="56"
-            left="0"
-            right="0"
-            cursor="pointer"
-            paddingX="8"
-            paddingY="12"
-            border="brand-weak"
-            radius="xs"
-            overflowY="auto"
-            maxHeight="250"
-          >
-            <ul className={styles.list} ref={listRef}>
-              <Flex direction="column" className={styles.scrollbar}>
+        {isOpen &&
+          createPortal(
+            <Flex
+              className={styles.options}
+              direction="column"
+              cursor="pointer"
+              marginTop="12"
+              paddingX="8"
+              paddingY="12"
+              border="brand-weak"
+              radius="xs"
+              overflowY="auto"
+              maxHeight="250"
+            >
+              <ul className={cn(styles.list, styles.scrollbar)} ref={listRef}>
                 {memoizedOptions.map((option, i) => (
-                  <Flex
-                    className={styles.item}
-                    as="li"
-                    paddingX="16"
-                    paddingY="12"
-                    radius="xs"
+                  <li
                     key={option.value}
+                    className={styles.item}
+                    onClick={() => handleOptionClick(option.value)}
                     ref={(el: HTMLLIElement) => {
                       itemRefs.current[i] = el;
                     }}
-                    onClick={() => handleOptionClick(option.value)}
                   >
                     <Text
                       className={cn(styles.label, {
@@ -188,15 +188,15 @@ const Select = ({
                     >
                       {option.label}
                     </Text>
-                  </Flex>
+                  </li>
                 ))}
-              </Flex>
-            </ul>
-          </Flex>
-        )}
+              </ul>
+            </Flex>,
+            document.body
+          )}
       </Flex>
 
-      {displayError && (
+      {!isOpen && (
         <Flex paddingX="16">
           <Text
             as="span"
