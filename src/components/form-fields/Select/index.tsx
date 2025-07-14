@@ -73,10 +73,8 @@ const Select = ({
   const handleOpen = () => {
     if (disabled) return;
 
-    if (!isOpen) {
-      updatePortalPosition();
-    }
-
+    // 포털 위치를 미리 계산하여 레이아웃 쉬프트 방지
+    updatePortalPosition();
     setIsOpen(!isOpen);
   };
 
@@ -124,6 +122,9 @@ const Select = ({
     document.addEventListener('mousedown', handleClickOutside);
     window.addEventListener('scroll', updatePortalPosition);
     window.addEventListener('resize', updatePortalPosition);
+
+    // 컴포넌트 마운트 시 포털 위치 미리 계산
+    updatePortalPosition();
 
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
@@ -195,6 +196,7 @@ const Select = ({
             radius="xs"
             overflowY="auto"
             maxHeight="250"
+            fitHeight={true}
             position="absolute"
             zIndex={10}
             style={{
@@ -227,18 +229,26 @@ const Select = ({
           document.body
         )}
 
-      {!isOpen && (
-        <Flex paddingX="16">
-          <Text
-            as="span"
-            id={`${id}-error`}
-            variant="body-default-s"
-            onBackground="danger-weak"
-          >
-            {errorMessage}
-          </Text>
-        </Flex>
-      )}
+      {/* 에러 메시지 영역을 항상 렌더링하여 레이아웃 쉬프트 방지 */}
+      <Flex
+        paddingX="16"
+        overflow="hidden"
+        style={{
+          height: displayError ? 'auto' : '0',
+          minHeight: displayError ? 'auto' : '0',
+          opacity: displayError ? 1 : 0,
+          transition: 'opacity 0.2s ease',
+        }}
+      >
+        <Text
+          as="span"
+          id={`${id}-error`}
+          variant="body-default-s"
+          onBackground="danger-weak"
+        >
+          {errorMessage}
+        </Text>
+      </Flex>
     </Flex>
   );
 };
