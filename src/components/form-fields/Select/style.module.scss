@@ -39,13 +39,15 @@
     @include DisabeldIcon;
     color: var(--neutral-on-background-weak);
     border-color: var(--solid-border-color-neutral);
-    background-color: var(--neutral-alpha-weak);
+    background: var(--neutral-alpha-weak);
     cursor: not-allowed;
   }
 }
 
 .options {
+  background: var(--neutral-background-weak);
   border-color: var(--brand-on-background-weak);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 
   .list {
     padding: 0;

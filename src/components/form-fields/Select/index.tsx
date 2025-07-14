@@ -45,6 +45,11 @@ const Select = ({
 
   const [isOpen, setIsOpen] = useState(false);
   const [selectedLabel, setSelectedLabel] = useState('');
+  const [portalPosition, setPortalPosition] = useState({
+    top: 0,
+    left: 0,
+    width: 0,
+  });
 
   const memoizedOptions = useMemo(() => {
     if (allText) {
@@ -54,8 +59,24 @@ const Select = ({
     return options;
   }, [options, allText]);
 
+  const updatePortalPosition = () => {
+    if (containerRef.current) {
+      const rect = containerRef.current.getBoundingClientRect();
+      setPortalPosition({
+        top: rect.bottom + window.scrollY,
+        left: rect.left + window.scrollX,
+        width: rect.width,
+      });
+    }
+  };
+
   const handleOpen = () => {
     if (disabled) return;
+
+    if (!isOpen) {
+      updatePortalPosition();
+    }
+
     setIsOpen(!isOpen);
   };
 
@@ -101,9 +122,13 @@ const Select = ({
 
   useEffect(() => {
     document.addEventListener('mousedown', handleClickOutside);
+    window.addEventListener('scroll', updatePortalPosition);
+    window.addEventListener('resize', updatePortalPosition);
 
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
+      window.removeEventListener('scroll', updatePortalPosition);
+      window.removeEventListener('resize', updatePortalPosition);
     };
   }, []);
 
@@ -156,45 +181,51 @@ const Select = ({
         {...props}
       >
         <Text variant="body-default-m">{selectedLabel}</Text>
-
-        {isOpen &&
-          createPortal(
-            <Flex
-              className={styles.options}
-              direction="column"
-              cursor="pointer"
-              marginTop="12"
-              paddingX="8"
-              paddingY="12"
-              border="brand-weak"
-              radius="xs"
-              overflowY="auto"
-              maxHeight="250"
-            >
-              <ul className={cn(styles.list, styles.scrollbar)} ref={listRef}>
-                {memoizedOptions.map((option, i) => (
-                  <li
-                    key={option.value}
-                    className={styles.item}
-                    onClick={() => handleOptionClick(option.value)}
-                    ref={(el: HTMLLIElement) => {
-                      itemRefs.current[i] = el;
-                    }}
-                  >
-                    <Text
-                      className={cn(styles.label, {
-                        [styles.active]: selectedLabel === option.label,
-                      })}
-                    >
-                      {option.label}
-                    </Text>
-                  </li>
-                ))}
-              </ul>
-            </Flex>,
-            document.body
-          )}
       </Flex>
+
+      {isOpen &&
+        createPortal(
+          <Flex
+            className={styles.options}
+            direction="column"
+            cursor="pointer"
+            paddingX="8"
+            paddingY="12"
+            border="brand-weak"
+            radius="xs"
+            overflowY="auto"
+            maxHeight="250"
+            position="absolute"
+            zIndex={10}
+            style={{
+              top: `${portalPosition.top}px`,
+              left: `${portalPosition.left}px`,
+              width: `${portalPosition.width}px`,
+            }}
+          >
+            <ul className={cn(styles.list, styles.scrollbar)} ref={listRef}>
+              {memoizedOptions.map((option, i) => (
+                <li
+                  key={option.value}
+                  className={styles.item}
+                  onClick={() => handleOptionClick(option.value)}
+                  ref={(el: HTMLLIElement) => {
+                    itemRefs.current[i] = el;
+                  }}
+                >
+                  <Text
+                    className={cn(styles.label, {
+                      [styles.active]: selectedLabel === option.label,
+                    })}
+                  >
+                    {option.label}
+                  </Text>
+                </li>
+              ))}
+            </ul>
+          </Flex>,
+          document.body
+        )}
 
       {!isOpen && (
         <Flex paddingX="16">
