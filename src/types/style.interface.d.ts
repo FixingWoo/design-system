@@ -96,6 +96,7 @@ interface SizeProps {
   fill?: boolean;
   fillWidth?: boolean;
   fillHeight?: boolean;
+  aspectRatio?: CSSProperties['aspectRatio'];
 }
 
 interface StyleProps {
@@ -147,4 +148,13 @@ interface StyleProps {
   textType?: TextType;
   textWeight?: TextWeight;
   cursor?: CSSProperties['cursor'] | 'interactive';
+}
+
+interface GridProps {
+  columns?: gridColumns;
+  rows?: gridColumns;
+  tabletColumns?: gridColumns;
+  mobileColumns?: gridColumns;
+  tabletRows?: gridColumns;
+  mobileRows?: gridColumns;
 }

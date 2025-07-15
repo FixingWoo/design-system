@@ -2,6 +2,7 @@ export * from './Button';
 export * from './Column';
 export * from './ElementType';
 export * from './Flex';
+export * from './Grid';
 export * from './Heading';
 export * from './Icon';
 export * from './Line';
