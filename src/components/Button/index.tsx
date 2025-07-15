@@ -5,7 +5,7 @@ import cn from 'classnames';
 
 import styles from './style.module.scss';
 
-import { ElementType, Flex } from '../';
+import { ElementType, Flex } from '@/components';
 
 interface ICommonProps extends CommonProps {
   variant?: 'primary' | 'secondary' | 'tertiary' | 'ghost';

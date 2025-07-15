@@ -229,7 +229,6 @@ const Select = ({
           document.body
         )}
 
-      {/* 에러 메시지 영역을 항상 렌더링하여 레이아웃 쉬프트 방지 */}
       <Flex
         paddingX="16"
         overflow="hidden"

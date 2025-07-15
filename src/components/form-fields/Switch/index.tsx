@@ -1,10 +1,10 @@
 import React, { forwardRef, useEffect, useState } from 'react';
 import cn from 'classnames';
 
-import { Flex } from '@/components';
-
 import styles from './style.module.scss';
 import commonStyles from '@/components/common.module.scss';
+
+import { Flex } from '@/components';
 
 interface SwitchProps extends React.InputHTMLAttributes<HTMLInputElement> {
   className?: string;

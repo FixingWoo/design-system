@@ -1,9 +1,9 @@
 export * from './Button';
-export * from './Icon';
 export * from './Column';
 export * from './ElementType';
 export * from './Flex';
 export * from './Heading';
+export * from './Icon';
 export * from './Text';
 
 export * from './form-fields/Checkbox';

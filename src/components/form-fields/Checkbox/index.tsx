@@ -1,10 +1,9 @@
 'use client';
 
 import React, { forwardRef, useState, useEffect } from 'react';
+import styles from './style.module.scss';
 
 import { Flex, Button, Icon } from '@/components';
-
-import styles from './style.module.scss';
 
 interface CheckboxProps extends React.InputHTMLAttributes<HTMLInputElement> {
   label?: string;

@@ -1,9 +1,9 @@
 'use client';
 
 import React, { useState, useEffect, forwardRef } from 'react';
-import { Flex } from '@/components';
-
 import styles from './style.module.scss';
+
+import { Flex } from '@/components';
 
 interface RadioButtonProps extends React.InputHTMLAttributes<HTMLInputElement> {
   label?: string;
